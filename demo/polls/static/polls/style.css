@@ -1,0 +1,37 @@
+li a {
+	color: green;
+}
+
+li {
+	color: rgb(101, 0, 0);
+}
+
+.love {
+	width: 500px;
+	height: 500px;
+	position: relative;
+	background: url(https://scontent.xx.fbcdn.net/v/t1.15752-9/300863052_595811878666092_7230973726303955010_n.jpg?stp=dst-jpg_p206x206&_nc_cat=110&ccb=1-7&_nc_sid=510075&_nc_ohc=JcknTOfOvswAX8zD8b2&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdRqHbzEkTgM6xXnsOo16OLRg_OKEhhz8cl0P_1e9VX7qw&oe=65B2D177);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.love-txt {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: linear-gradient(
+		90deg,
+		rgba(255, 199, 143, 1) 0%,
+		rgba(224, 29, 163, 1) 25%,
+		rgba(236, 150, 255, 1) 50%,
+		rgb(255, 100, 100) 75%,
+		rgba(255, 27, 173, 1) 100%
+	);
+	background-clip: content-box;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-weight: 800;
+	font-size: 72px;
+}
