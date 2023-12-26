@@ -6,13 +6,40 @@
 		<title>Document</title>
 	</head>
 
+	<style>
+		html,
+		body {
+			width: 100%;
+		}
+		body {
+			max-width: 768px;
+			margin-inline: auto;
+		}
+	</style>
 	<body>
-		<h1>{{ question }}</h1>
+		<form action="{% url 'polls:vote' question.id %}" method="post">
+			{% comment %} for auth reasons {% endcomment %} {% csrf_token %}
+			<fieldset>
+				<legend><h1>Question: {{ question.question_text }}</h1></legend>
+				{% comment %} check for errors {% endcomment %} {% if error_message %}
+				<p><strong>{{ error_message }}</strong></p>
+				{% endif %} {% comment %} list all of choices {% endcomment %}
+				<h2>Choices:</h2>
+				{% for choice in question.choice_set.all %}
 
-		<ul>
-			{% for choice in question.choice_set.all %}
-			<li>{{ choice.choice_text }}</li>
-			{% endfor %}
-		</ul>
+				<label for="choice{{ forloop.counter }}">
+					<input
+						type="radio"
+						name="choice"
+						id="choice{{ forloop.counter }}"
+						value="{{ choice.id }}"
+					/>
+					{{ choice.choice_text }}
+				</label>
+				<br />
+				{% endfor %}
+			</fieldset>
+			<input type="submit" value="Vote" />
+		</form>
 	</body>
 </html>
