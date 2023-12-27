@@ -1,0 +1,14 @@
+{
+	"name": "django-demo",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"tw": "npx tailwindcss -i ./polls/static/polls/tailwind.css -o ./polls/static/polls/global.css --watch"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"tailwindcss": "^3.4.0"
+	}
+}
